@@ -1,38 +1,98 @@
-.App {
-  text-align: center;
+*{
+    text-align: center;
+    direction: rtl;
+    box-sizing: border-box;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.App{
+    background-color: black;
+    color: white;
+    min-height: 100vh;
+    min-width:100vh;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.App-icon{
+    max-height: 40px;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.user-profile img{
+    max-width: 120px;
+    border-radius: 5%;
 }
-
-.App-link {
-  color: #61dafb;
+a:link{
+    text-decoration: none;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.user-profile:hover img{
+    border: 2px solid white;
+}
+.user-profile div{
+    color: gray;
+}
+.user-profile:hover div{
+    color: white;
+}
+nav .nav-header{
+    font-size: 11px;
+    direction: rtl;
+    margin-top: -10px;
+    margin-bottom: -5px;
+}
+.wide-header{
+    width: 100vw;
+    background-color: black;
+}
+.link-title{
+    text-decoration: none;
+    color: white;
+    padding-right: 10px;
+}
+.link-title:hover{
+    color: gray;
+}
+.nav-icon{
+    max-height: 40px;
+    cursor: pointer;
+    border-radius: 10%;
+}
+.switch-profile-window .bg-List{
+    background-color: rgba(0,0,0,0.5);
+}
+.switch-profile-window{
+    position: fixed;
+    top: 43px;
+    left: 5%;
+    width: 200px;
+    cursor: pointer;
+    display: none;
+    transition: ease-in 1s;
+}
+.switch-profile-window:hover{
+    display: block;
+}
+.display-list:hover .switch-profile-window{
+    display: block;
+}
+.profile-choice{
+    padding-right: 5px;
+    color: white;
+    font-size: 15px;
+}
+.profile-choice:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+.movie-body{
+    background-color: rgb(26, 25, 25);
+    display: none;
+    transition: 2s ease-in-out;
+}
+.movie-card{
+    width: 13rem;
+    transition: 1s ease-in;
+}
+.movie-body{
+    display: none;
+}
+.movie-card:hover{
+    width: 18rem;
+}
+.movie-card:hover .movie-body{
+    display: block;
 }
