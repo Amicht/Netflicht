@@ -5,11 +5,11 @@ import HeaderNavs from "./Header/HeaderNavs"
 import CradCarouselle from "../CradCarouselle/CradCarouselle"
 import { content } from "../../ts/movies"
 
-type Home={
+type HomeProp={
   setVideo:any;
   changeUser:any;
 }
-const Home = (props:Home) => {
+const Home = (props:HomeProp) => {
     const myUser = useContext(UserContext);
   return (
     <>

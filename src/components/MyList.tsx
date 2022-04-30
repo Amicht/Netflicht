@@ -1,4 +1,4 @@
-import { useContext, useState } from "react"
+import { useContext } from "react"
 import { listContext } from "../App"
 import CradCarouselle from "./CradCarouselle/CradCarouselle"
 import HeaderNavs from "./Home/Header/HeaderNavs"

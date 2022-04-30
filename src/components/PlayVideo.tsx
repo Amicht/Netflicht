@@ -5,7 +5,7 @@ type video={
 
 const PlayVideo = (props:video) =>{
   return (
-        <iframe src={props.trailer} style={{width:"95vw",height:"95vh"}}>
+        <iframe title={props.trailer} src={props.trailer} style={{width:"95vw",height:"95vh"}}>
         </iframe>
   )
 }

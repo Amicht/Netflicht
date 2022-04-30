@@ -18,7 +18,7 @@ const HeaderNavs = (props:{changeUser:any}) => {
           <Nav.Link href="" className="text-white">חדשים ופופולריים</Nav.Link>
           <Link to='/MyList' className="link-title">הרשימה שלי</Link>
           <Nav className="me-auto display-list">
-            <img className="nav-icon" src={myUser.img}></img>
+            <img className="nav-icon" alt={myUser.name + ' img'} src={myUser.img}></img>
             <SwitchProfile changeUser={props.changeUser}/>
           </Nav>
       </Container>
