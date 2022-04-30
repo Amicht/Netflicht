@@ -3,6 +3,11 @@
     direction: rtl;
     box-sizing: border-box;
 }
+body{
+    background-color: black;
+    width: 100vw;
+    height: 100%;
+}
 .App{
     background-color: black;
     color: white;
@@ -80,15 +85,11 @@ nav .nav-header{
 }
 .movie-body{
     background-color: rgb(26, 25, 25);
-    display: none;
     transition: 2s ease-in-out;
 }
 .movie-card{
     width: 13rem;
     transition: 1s ease-in;
-}
-.movie-body{
-    display: none;
 }
 .movie-card:hover{
     width: 18rem;

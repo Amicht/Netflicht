@@ -11,7 +11,7 @@ const CradCarouselle = (props:caoselleItems) => {
     const myMovies = props.arr;
   return (
     <>
-        <h5>{props.title}</h5>
+        <h5 className="mt-5">{props.title}</h5>
           <Carousel className="movie-caro">
         {myMovies.map((m,i)=> (i+4)%4===0?
         <Carousel.Item interval={30000} key={i}>

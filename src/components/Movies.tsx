@@ -17,6 +17,10 @@ const Movies = (props:TVitems) => {
         setVideo={props.setVideo}/>
         <CradCarouselle title="פעולה" arr={props.tvShows.filter(s=>s.genre==='פעולה')}
         setVideo={props.setVideo}/>
+        <CradCarouselle title="מתח" arr={props.tvShows.filter(s=>s.genre==='מתח')}
+        setVideo={props.setVideo}/>
+        <CradCarouselle title="ביוגרפיה" arr={props.tvShows.filter(s=>s.genre==='ביוגרפיה')}
+        setVideo={props.setVideo}/>
     </>
   )
 }

@@ -14,7 +14,7 @@ const Home = (props:Home) => {
   return (
     <>
         <HeaderNavs changeUser={props.changeUser}/>
-        <MainVideo content={Object.values(content)[0]} setVideo={props.setVideo}/>
+        <MainVideo content={Object.values(content)[Object.values(content).length-1]} setVideo={props.setVideo}/>
         <CradCarouselle title={`המומלצים עבור ${myUser.name}`} arr={Object.values(content)}setVideo={props.setVideo}/>
         <CradCarouselle title={`סדרות`} arr={Object.values(content).filter(s=>s.type==="series")}setVideo={props.setVideo}/>
         <CradCarouselle title={`סרטים`} arr={Object.values(content).filter(s=>s.type==="movie")}setVideo={props.setVideo}/>
