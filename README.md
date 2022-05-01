@@ -1,4 +1,4 @@
-# Netflix mockup app / React
+# Netflix mockup app (Netflicht)
 
 This project was my attempt to copy Netflix's UI using React typescript.
 The project main purpose was to practice React (syntax, Hooks, components etc..) on a "real life" situation (plus - I love Netflix...).
