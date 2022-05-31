@@ -10,7 +10,6 @@ import { content } from './ts/movies';
 import Movies from './components/Movies';
 import PlayVideo from './components/PlayVideo';
 import MyList from './components/MyList';
-import Footer from './components/Footer';
 
 
 export const listContext = createContext({});
@@ -38,7 +37,6 @@ function App() {
           <Route path='/MyList' element={<MyList changeUser={changeUser} setVideo={setVideo}/>}/> 
           <Route path="/watch/:myVideo" element={<PlayVideo trailer={myTrailer}/>}/>
         </Routes>
-        <Footer />
       </div>
     </BrowserRouter>
     </listContext.Provider>

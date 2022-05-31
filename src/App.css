@@ -89,7 +89,6 @@ nav .nav-header{
 }
 .movie-card{
     width: 13rem;
-    transition: 1s ease-in;
 }
 .movie-card:hover{
     width: 18rem;

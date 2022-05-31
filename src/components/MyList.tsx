@@ -17,7 +17,7 @@ const MyList = (props:{changeUser:any; setVideo:any}) => {
         <CradCarouselle title="הסדרות שלי" 
           arr={userList.list.filter((m: { type: string} ) => m.type === 'series')} 
           setVideo={props.setVideo} />
-        :null}
+        :<h4>No movies on list</h4>}
     </div>
   )
 }

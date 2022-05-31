@@ -1,4 +1,5 @@
 import CradCarouselle from "./CradCarouselle/CradCarouselle";
+import Footer from "./Footer";
 import HeaderNavs from "./Home/Header/HeaderNavs";
 import MainVideo from "./Home/MainVideo"
 
@@ -16,6 +17,7 @@ const TVshows = (props:TVitems) => {
         setVideo={props.setVideo}/>
         <CradCarouselle title="דרמה" arr={props.tvShows.filter(s=>s.genre==='דרמה')}
         setVideo={props.setVideo}/>
+        <Footer />
     </>
   )
 }

@@ -4,6 +4,7 @@ import MainVideo from "./MainVideo"
 import HeaderNavs from "./Header/HeaderNavs"
 import CradCarouselle from "../CradCarouselle/CradCarouselle"
 import { content } from "../../ts/movies"
+import Footer from "../Footer"
 
 type HomeProp={
   setVideo:any;
@@ -18,6 +19,7 @@ const Home = (props:HomeProp) => {
         <CradCarouselle title={`המומלצים עבור ${myUser.name}`} arr={Object.values(content)}setVideo={props.setVideo}/>
         <CradCarouselle title={`סדרות`} arr={Object.values(content).filter(s=>s.type==="series")}setVideo={props.setVideo}/>
         <CradCarouselle title={`סרטים`} arr={Object.values(content).filter(s=>s.type==="movie")}setVideo={props.setVideo}/>
+        <Footer />
     </>
   )
 }
