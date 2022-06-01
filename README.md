@@ -5,5 +5,6 @@ The project main purpose was to practice React (syntax, Hooks, components etc..)
 
 ## Run project
 1. `git clone https://github.com/Amicht/Netflicht-mockup-page.git`
-2. `npm i` (on 'Netflicht-mockup-page' folder)
-3. `npm start`
+2. `cd Netflicht-mockup-page`
+3. `npm i`
+4. `npm start`
