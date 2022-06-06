@@ -1,4 +1,7 @@
 ## Netflicht
+
+[Demo](https://amicht.github.io/Netflicht/)
+
 ### Netflix mockup app 
 
 This project was my attempt to copy Netflix's UI using React typescript.
