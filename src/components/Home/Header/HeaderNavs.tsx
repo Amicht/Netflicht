@@ -9,7 +9,7 @@ import SwitchProfile from "./SwitchProfile"
 const HeaderNavs = (props:{changeUser:any}) => {
   const myUser = useContext(UserContext);
   return (
-    <Navbar variant="dark" className="sticky-top wide-header">
+    <Navbar variant="dark" className="sticky-top">
       <Container className="nav-header">
         <Navbar.Brand href="#"><HeaderIcon /></Navbar.Brand>
             <Link to='/Home' className="link-title">דף הבית</Link>
