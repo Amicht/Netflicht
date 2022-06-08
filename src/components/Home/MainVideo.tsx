@@ -10,7 +10,7 @@ type MainMovie={
 const MainVideo = (props:MainMovie) => {
   
   return (
-    <div className="container-sm"style={{width:'100%',height:'90vh'}}>
+    <div style={{height:'90vh'}}>
       <div className="d-flex" style={{
         backgroundImage: `url(${props.content.img})`,
         backgroundRepeat: 'no-repeat', width:"100%",height:'100%',

@@ -3,16 +3,19 @@
     direction: rtl;
     box-sizing: border-box;
 }
-body{
+html{
+    height: 100%;
     background-color: black;
-    width: 100vw;
+}
+body{
+    width: 100%;
+    min-height: 100vh;
     height: 100%;
 }
 .App{
     background-color: black;
     color: white;
     min-height: 100vh;
-    min-width:100vh;
 }
 .App-icon{
     max-height: 40px;

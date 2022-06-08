@@ -28,7 +28,7 @@ function App() {
     <UserContext.Provider value={currentUser}>
     <listContext.Provider value={{list,setList}}>
     <BrowserRouter>
-      <div className="App">
+      <div className="App container mx-auto">
         <Routes>
           <Route path='/' element={<Profiles changeUser={changeUser}/>}/>
           <Route path='/Home' element={<Home changeUser={changeUser} setVideo={setVideo}/>}/>
