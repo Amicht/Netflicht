@@ -1,6 +1,6 @@
 ## Netflicht
 
-[Demo](https://amicht.github.io/Netflicht/)
+[Demo](https://netflicht-b1686.web.app)
 
 ### Netflix mockup app 
 
