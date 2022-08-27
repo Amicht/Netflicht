@@ -1,0 +1,12 @@
+.header-img{
+    height: 70px;
+    object-fit: contain;
+}
+.header-nav{
+    padding-right: 5px;
+    color: rgb(177, 176, 176);
+    text-decoration: none;
+}
+.header-nav:hover{
+    color: rgb(102, 102, 102);
+}

@@ -1,0 +1,9 @@
+.user-profile-img{
+    width: 130px;
+    border-radius: 10%;
+    border: 4px solid black;
+    cursor: pointer;
+}
+.user-profile-img:hover{
+    border: 4px solid white;
+}
