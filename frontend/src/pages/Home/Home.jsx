@@ -1,18 +1,29 @@
-import { useNavigate } from 'react-router-dom'
-import { useEffect, useState } from 'react'
-import { getMovies } from '../../services/api.service'
+import { useEffect } from 'react'
+import { useContext } from 'react'
 import Header from '../../components/Header/Header'
+import Loading from '../../components/Loading/Loading'
+import MovieScroller from '../../components/Movie-Scroller/MovieScroller'
+import { StoreCtxt } from '../../services/StoreService'
 
 const Home = () => {
-  const navigate = useNavigate();
-  const [movies, setMovies] = useState([]);
+  const { movies, isLoading } = useContext(StoreCtxt).states;
+  const { loggedGuard } = useContext(StoreCtxt).actions;
 
   useEffect(() => {
-    getMovies().then(res => setMovies(res)).catch(() => navigate('/'))
-  })
+    window.scrollTo(0,0);
+    loggedGuard(true);
+  },[]);
+  
   return (
     <>
-      <Header />
+    {isLoading? <Loading /> :
+    <div className='container bg-black'>
+      <Header isHomePage={true}/>
+      <MovieScroller movies={movies.filter(m => m.genre === "אנימציה")} title="אנימציה"/>
+      <MovieScroller movies={movies.filter(m => m.genre === "דרמה")} title="דרמה"/>
+      <MovieScroller movies={movies.filter(m => m.genre === "פעולה")} title="פעולה"/>
+      <MovieScroller movies={movies.filter(m => m.genre === "קומדיה")} title="קומדיה"/>
+    </div>}
     </>
   )
 }

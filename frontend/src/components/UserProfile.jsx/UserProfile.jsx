@@ -2,7 +2,7 @@ import React from 'react'
 import './UserProfile.css';
 
 const UserProfile = ({name, _id, img, changeUser}) => {
-  const onUserClick = () => changeUser(_id);
+  const onUserClick = () => changeUser({ _id, img },false);
 
   return (
     <div className='col-sm' onClick={onUserClick}>

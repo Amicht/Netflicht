@@ -1,31 +1,35 @@
-import {getUserData, getUsers, getLogoImageSrc}  from '../../services/api.service'
-import { useEffect, useState } from 'react';
-import { useNavigate } from "react-router-dom";
+import { getLogoImageSrc, getUserFromStorage}  from '../../services/api.service';
+import { useEffect, useContext } from 'react';
 import UserProfile from '../../components/UserProfile.jsx/UserProfile'
 import Loading  from '../../components/Loading/Loading';
 import SignInNavbar from '../../components/SignInNavbar';
-
+import { StoreCtxt } from '../../services/StoreService';
+import './sign-in.css'
 
 const SignIn = () => {
-  const [users, setUsers] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
+  const { loadingImg, users, isLoading} = useContext(StoreCtxt).states;
+  const {loginUser, getAllUsers, loggedGuard } = useContext(StoreCtxt).actions;
   const logo = getLogoImageSrc();
-  const navigate = useNavigate()
-  const changeUser = (userId) => {
-    setIsLoading(true);
-    getUserData(userId).then(() => {
-      setTimeout(() => navigate('/browse'), 1000)
-    })
-  }
-  useEffect(() => { getUsers().then(res =>setUsers(res)); }, [])
+  
+  useEffect(() => { 
+    if(getUserFromStorage()){
+      loggedGuard(false);
+    }
+    getAllUsers(); 
+    window.scrollTo(0,0)});
 
   return (
     <>
-      {isLoading?<Loading />:<><SignInNavbar logo={logo} />
-      <h3>מי צופה ב-Netflicht?</h3>
-      <div className='row text-center py-5'>
-        {users.map((u, i) => <UserProfile key={i} {...u} changeUser={changeUser}/>)}
-      </div></>}
+      {isLoading?<Loading img={loadingImg}/>:
+      <div className='sign-in'>
+        {users.length >0? <SignInNavbar logo={logo} img={loadingImg}/>:null }
+        <h1>מי צופה ב-Netflicht?</h1>
+        <div className='col-sm-8 py-5 mx-auto'>
+
+        <div className='row'>
+          {users.map((u, i) => <UserProfile key={i} {...u} changeUser={loginUser}/>)}
+        </div></div>
+      </div>}
     </>
   )
 }

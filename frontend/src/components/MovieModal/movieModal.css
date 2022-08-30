@@ -1,0 +1,31 @@
+.movie-modal{
+    height: 400px;
+}
+.movie-title{
+    text-shadow: 1px 1px 2px black, 0 0 1em blue, 0 0 0.2em darkblue;
+    color: white;
+}
+.movie-type{
+    padding-top: 200px;
+    text-shadow: 1px 1px 2px black, 0 0 1em rgb(39, 38, 38), 0 0 0.2em black;
+    color: rgb(230, 6, 6);
+}
+.trasform-bg{
+    height: 40px;
+    width: 100%;
+    background-image: linear-gradient(rgba(0, 0, 0, 0), black);
+}
+
+.modal-img img{
+    width: 60%;
+    height: 200px;
+    object-fit: contain;
+}
+.movie-description{
+    font-size: 12px;
+}
+.close-modal-btn{
+    position: absolute;
+    top: 5px;
+    left: 5px;
+}

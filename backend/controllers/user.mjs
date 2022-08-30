@@ -2,7 +2,8 @@ import {Router} from 'express';
 import { ErrorModel } from '../models/error.model.mjs';
 import { getAllUsersAsync, getUserAsync, addToWatchListAsync, removeFromWatchListAsync } from '../bl/user.bl.mjs';
 import { authUser } from '../middleware/auth.mjs'
-import {getNewToken } from '../helpers/jwt-helper.mjs';
+import { getNewToken } from '../helpers/jwt-helper.mjs';
+
 const userCtrl = Router();
 
 userCtrl.get('/',async (req,res,next)=>{

@@ -1,0 +1,21 @@
+.movie-card{
+    width: 13rem;
+    height: 13rem;
+    background-color: black;
+}
+
+.movie-card img{
+    object-fit: cover;
+    height: 13rem;
+}
+.carousel-indicators{ 
+    visibility: hidden !important;
+}
+.card-body{
+    display: none;
+}
+.movie-card:hover{
+    position: relative;
+    transform: scale(1.5);
+}
+

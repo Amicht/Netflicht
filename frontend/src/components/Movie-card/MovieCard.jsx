@@ -1,8 +1,10 @@
+import './MovieCard.css';
 
-
-const MovieCard = () => {
+const MovieCard = ({movie, handleCardClick}) => {
   return (
-    <div>MovieCard</div>
+    <div onClick={() => handleCardClick(movie._id)} className="movie-card" >
+      <img src={movie.img} className=" movie-card-img" alt={movie.img} />
+    </div>
   )
 }
 

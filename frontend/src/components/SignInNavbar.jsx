@@ -4,11 +4,11 @@ const SignInNavbar = ({logo}) => {
 
   return (
     <Navbar>
-        <Navbar.Brand href="#home">
+        <Navbar.Brand>
         <img
             src={logo}
-            width="200"
-            height="100"
+            width="180"
+            height="70"
             className="d-inline-block align-top"
             alt="Netflicht logo"
         />

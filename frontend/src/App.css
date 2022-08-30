@@ -1,6 +1,10 @@
 *{
     direction: rtl;
-    background-color: black;
     color: white;
     text-align: center;
+}
+.app{
+    background-color: black;
+    min-height: 100vh;
+    min-width: 100vw;
 }

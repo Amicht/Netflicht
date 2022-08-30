@@ -16,10 +16,18 @@ const ENDPOINTS = {
     logo: serverURL + '/api/assets/logo.png'
 }
 
-const getTokenFromStorage = () =>  JSON.parse(window.localStorage.getItem(JWTKey)) || "";
-const setTokenToStorage = token =>  window.localStorage.setItem(JWTKey, JSON.stringify(token));
-const getUserFromStorage = () =>  JSON.parse(window.localStorage.getItem(USERKEY)) || "";
-const setUserToStorage = user =>  window.localStorage.setItem(USERKEY, JSON.stringify(user));
+// storage Management
+const getTokenFromStorage = () =>  JSON.parse(window.sessionStorage.getItem(JWTKey)) || "";
+const removeTokenFromStorage = () =>  window.sessionStorage.removeItem(JWTKey) || "";
+const setTokenToStorage = token =>  window.sessionStorage.setItem(JWTKey, JSON.stringify(token));
+const getUserFromStorage = () =>  JSON.parse(window.sessionStorage.getItem(USERKEY)) || "";
+const removeUserFromStorage = () =>  window.sessionStorage.removeItem(USERKEY) || "";
+const setUserToStorage = user =>  window.sessionStorage.setItem(USERKEY, JSON.stringify(user));
+const exitAccount = () => {removeTokenFromStorage(); removeUserFromStorage(); }
+
+// helpers
+const fixMoviesData = movies => development? movies.map(m => {return {...m,img:serverURL+ m.img }}): movies;
+const getLogoImageSrc = () => ENDPOINTS.logo;
 
 const getData = (path) => fetch(path, {
     method:METHODS.GET,
@@ -44,22 +52,24 @@ const deleteData = (path) => fetch(path, {
     }
 });
 
-const fixMoviesData = movies => development? movies.map(m => {return {...m,img:serverURL+ m.img }}): movies;
-
+// api requests
 const getUsers = () => fetch(ENDPOINTS.users).then(res => res.json());
-const getUserData = (userId) => fetch(ENDPOINTS.users + userId).then(res => res.json())
-    .then(res => { setTokenToStorage(res.token); setUserToStorage(res.user); })
+const getUserData = userId => fetch(ENDPOINTS.users + userId).then(res => res.json())
+    .then(res => { 
+        setTokenToStorage(res.token); setUserToStorage(res.user); 
+        return res.user; })
 const getMovies = () => getData(ENDPOINTS.movies).then(res => res.json()).then(fixMoviesData);
-const addMovieToWatchList = (movieId) => postData(ENDPOINTS.watchList + movieId, "").then(res => res.json());
-const removeMovieFromWatchList = (movieId) => deleteData(ENDPOINTS.watchList + movieId, "").then(res => res.json());
-const getLogoImageSrc= () => ENDPOINTS.logo;
+const addMovieToWatchList = (movieId) => postData(ENDPOINTS.watchList + movieId, {data:"fake-data"}).then(res => res.json());
+const removeMovieFromWatchList = (movieId) => deleteData(ENDPOINTS.watchList + movieId);
 
 
 export {
     getUsers,
     getUserData,
     getMovies,
+    getUserFromStorage,
     addMovieToWatchList,
     removeMovieFromWatchList,
-    getLogoImageSrc
+    getLogoImageSrc,
+    exitAccount
 }

@@ -1,0 +1,44 @@
+.nav-icon{
+    max-height: 40px;
+    cursor: pointer;
+    border-radius: 10%;
+}
+
+.switch-profile-window{
+    position: fixed;
+    top: 43px;
+    left: 5%;
+    width: 200px;
+    cursor: pointer;
+    display: none;
+    transition: ease-in 1s;
+    background-color: rgba(0, 0,0, 0.5) !important;
+}
+.switch-profile-window .bg-List{
+    background-color: rgba(0, 0,0, 0.5) !important;
+}
+.switch-profile-window:hover{
+    display: block;
+}
+.bg-profile{
+    background-color: transparent;
+}
+.bg-profile img{
+    background-color: transparent;
+}
+.bg-profile span{
+    background-color: transparent;
+}
+.display-list:hover .switch-profile-window{
+    display: block;
+}
+.profile-choice{
+    background-color: transparent;
+    padding-right: 10px;
+    color: white;
+    font-size: 15px;
+}
+.profile-choice:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}

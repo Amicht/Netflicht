@@ -1,5 +1,8 @@
+.header{
+    background-color: black;
+}
 .header-img{
-    height: 70px;
+    height: 50px;
     object-fit: contain;
 }
 .header-nav{
@@ -9,4 +12,7 @@
 }
 .header-nav:hover{
     color: rgb(102, 102, 102);
+}
+.navbar-collapse.collapse.show ~ .display-list{
+    display: none;
 }
