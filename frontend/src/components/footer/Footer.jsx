@@ -14,7 +14,15 @@ const Footer = () => {
     <Container className='pt-5'>
     <footer className="d-flex flex-wrap bg-black justify-content-between align-items-center  py-3 my-4 border-top">
         <p className="col-md-4 mb-0 text-muted">© 2022 Amit Licht</p>
-        <ul className="nav col-md-4 justify-content-end">
+    </footer>
+    </Container>
+  )
+}
+
+export default Footer
+
+/* 
+<ul className="nav col-md-4 justify-content-end">
             {navs.map((r,i) => 
             <li className="nav-item" key={i}>
                 <Link 
@@ -23,9 +31,4 @@ const Footer = () => {
                 </ Link>
             </li>)}
         </ul>
-    </footer>
-    </Container>
-  )
-}
-
-export default Footer
+*/

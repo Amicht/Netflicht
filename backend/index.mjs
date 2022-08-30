@@ -9,7 +9,7 @@ const server = express();
 
 server.use(cors());
 server.use(express.json());
-// server.use(express.static('public'));
+server.use(express.static('public'));
 server.use('/api/assets/', express.static('assets'));
 
 server.use('/api/users',userCtrl);
