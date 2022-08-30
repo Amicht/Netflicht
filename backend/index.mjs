@@ -9,11 +9,14 @@ const server = express();
 
 server.use(cors());
 server.use(express.json());
+// server.use(express.static('public'));
 server.use('/api/assets/', express.static('assets'));
 
 server.use('/api/users',userCtrl);
 server.use('/api/movies',movieCtrl);
-server.get('*',(req,res)=> res.status(404).send('route not found'));
+server.get('*', (req,res) => {
+    res.sendFile(process.cwd()+ "/public/index.html")
+});
 
 server.use('*', (err, req,res,next)=>{
     res.status(err.status || 500).json(err.message || "ERROR");

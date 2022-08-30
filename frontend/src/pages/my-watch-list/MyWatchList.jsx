@@ -20,14 +20,13 @@ const MyWatchList = () => {
       {isLoading? <Loading />:
       <div className='container bg-black'>
         <Header isHomePage={false}/>
+        <h2 className='text-end px-2 pt-3'>הרשימה שלי</h2>
         <div className='my-watch-list'>
           {myMovies.length >0? 
-            <MovieScroller title="הסרטים שלי" movies={myMovies} />: 
-            <h5 className='my-5'>אין סרטים ברשימה</h5>
+            <MovieScroller title="הסרטים שלי" movies={myMovies} />: null
           }
           {mySearies.length >0? 
-            <MovieScroller title="הסדרות שלי" movies={mySearies} />: 
-            <h5 className='my-5'>אין סדרות ברשימה</h5>
+            <MovieScroller title="הסדרות שלי" movies={mySearies} />: null
           }
         </div>
       </div>}

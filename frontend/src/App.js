@@ -8,6 +8,7 @@ import './App.css';
 import StoreServise from './services/StoreService'
 import DisplayVideo from './pages/display-video/DisplayVideo'
 import Footer from './components/footer/Footer'
+import ErrorPage from './pages/error/ErrorPage'
 
 function App() {
 
@@ -21,6 +22,7 @@ function App() {
           <Route path='/browse/searies' element={< Searies/>}/>
           <Route path='/browse/watch-list' element={< MyWatchList/>}/>
           <Route path='/browse/watch/:movieId' element={< DisplayVideo />}/>
+          <Route path='/*' element={< ErrorPage />}/>
       </Routes>
       <Footer />
       </div>

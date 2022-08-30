@@ -52,15 +52,17 @@ const deleteData = (path) => fetch(path, {
     }
 });
 
+const jsonify = res => res.json();
 // api requests
-const getUsers = () => fetch(ENDPOINTS.users).then(res => res.json());
-const getUserData = userId => fetch(ENDPOINTS.users + userId).then(res => res.json())
+const getUsers = () => fetch(ENDPOINTS.users).then(jsonify);
+const getUserData = userId => fetch(ENDPOINTS.users + userId).then(jsonify)
     .then(res => { 
         setTokenToStorage(res.token); setUserToStorage(res.user); 
-        return res.user; })
-const getMovies = () => getData(ENDPOINTS.movies).then(res => res.json()).then(fixMoviesData);
-const addMovieToWatchList = (movieId) => postData(ENDPOINTS.watchList + movieId, {data:"fake-data"}).then(res => res.json());
-const removeMovieFromWatchList = (movieId) => deleteData(ENDPOINTS.watchList + movieId);
+        return res.user; 
+    })
+const getMovies = () => getData(ENDPOINTS.movies).then(jsonify).then(fixMoviesData);
+const addMovieToWatchList = movieId => postData(ENDPOINTS.watchList + movieId, {data:"fake-data"}).then(jsonify);
+const removeMovieFromWatchList = movieId => deleteData(ENDPOINTS.watchList + movieId);
 
 
 export {

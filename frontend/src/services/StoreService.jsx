@@ -61,7 +61,15 @@ const StoreServise = ({children}) => {
       .then(() => setCurrentMovie({...currentMovie, isInWatchList:true}))
     }
   }
-  const playMovie = (movieId) => navigate('/browse/watch/' + movieId);
+  
+  const playMovie = (movieId) => {
+    getMovie(movieId);
+    startLoading(user.img);
+    setTimeout(() => {
+      stopLoading();
+      navigate('/browse/watch/' + movieId);
+    }, 1500);
+  }
 
   const actions = {
     loginUser,

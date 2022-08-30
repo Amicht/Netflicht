@@ -9,8 +9,8 @@ import { splitMoviesTo4th } from "./MovieScrollerLogic";
 
 const MovieScroller = ({movies, title}) => {
   const [windowWidth, setWindowWith] = useState(window.innerWidth);
-  const [show, setShow] = useState(false);
   const {getMovie} = useContext(StoreCtxt).actions;
+  const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   const handleCardClick = (movieId) => { getMovie(movieId); handleShow(); }
@@ -22,8 +22,8 @@ const MovieScroller = ({movies, title}) => {
 
 
   return (
-    <div className="my-3 py-5 scroller text-end">
-    <h5 className="mt-5">{title}</h5>
+    <div className="my-1 py-1 scroller text-end">
+    <h5>{title}</h5>
     <Carousel className="movie-caro my-3">
         {splitMoviesTo4th(movies, windowWidth).map((g,i)=> 
         <Carousel.Item className="caro-slide" interval={30000} key={i}>

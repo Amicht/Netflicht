@@ -11,6 +11,7 @@ const MovieModal = ({ handleClose, show}) => {
     const [isMoreInfo, setIsMoreInfo] = useState(true);
     const {currentMovie} = useContext(StoreCtxt).states;
     const closeModal = () => { setIsMoreInfo(true); handleClose() }
+    
   return (
     <>
       <Modal

@@ -1,0 +1,23 @@
+.main-movie{
+    height: 80vh;
+    width: 100vw;
+}
+.movie-info-container{
+    background-color: rgba(245, 245, 220, 0.4);
+}
+.dummy-linear-div1{
+    position: relative;
+    top: -150px;
+    height: 150px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0), black);
+}
+.genre-title{
+    font-size: 20px;
+    text-shadow: 1px 1px 2px black, 0 0 1em rgb(39, 38, 38), 0 0 0.2em black;
+    color: rgb(230, 6, 6);
+}
+.main-movie-title{
+    font-size: 20px;
+    text-shadow: 1px 1px 2px black, 0 0 1em red, 0 0 0.2em darkred;
+    color: white;
+}

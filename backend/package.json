@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.mjs",
   "scripts": {
-    "start": "nodemon ."
+    "start": "node ."
   },
   "keywords": [],
   "author": "",

@@ -2,6 +2,7 @@ import { useEffect } from 'react'
 import { useContext } from 'react'
 import Header from '../../components/Header/Header'
 import Loading from '../../components/Loading/Loading'
+import MainMovie from '../../components/main-movie/MainMovie'
 import MovieScroller from '../../components/Movie-Scroller/MovieScroller'
 import { StoreCtxt } from '../../services/StoreService'
 
@@ -19,6 +20,7 @@ const Home = () => {
     {isLoading? <Loading /> :
     <div className='container bg-black'>
       <Header isHomePage={true}/>
+      {movies[0]?<MainMovie movie={movies[15]} />:null}
       <MovieScroller movies={movies.filter(m => m.genre === "אנימציה")} title="אנימציה"/>
       <MovieScroller movies={movies.filter(m => m.genre === "דרמה")} title="דרמה"/>
       <MovieScroller movies={movies.filter(m => m.genre === "פעולה")} title="פעולה"/>
