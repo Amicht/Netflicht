@@ -1,9 +1,10 @@
-.main-movie{
-    height: 80vh;
-    width: 100vw;
-}
+
 .movie-info-container{
     background-color: rgba(245, 245, 220, 0.4);
+    margin-bottom: 150px;
+    margin-top: 100px;
+    width: fit-content;
+    max-width: 100%;
 }
 .dummy-linear-div1{
     position: relative;
@@ -17,7 +18,7 @@
     color: rgb(230, 6, 6);
 }
 .main-movie-title{
-    font-size: 20px;
+    font-size: 40px;
     text-shadow: 1px 1px 2px black, 0 0 1em red, 0 0 0.2em darkred;
     color: white;
 }

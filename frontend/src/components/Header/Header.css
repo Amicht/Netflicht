@@ -9,6 +9,8 @@
     padding-right: 5px;
     color: rgb(177, 176, 176);
     text-decoration: none;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 .header-nav:hover{
     color: rgb(102, 102, 102);

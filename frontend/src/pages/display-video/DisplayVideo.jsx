@@ -15,13 +15,13 @@ const DisplayVideo = () => {
   return (
     <>
     <Header isHomePage={false}/>
-    <div className="display-movie mx-auto py-5">
+    <div className="display-movie mx-auto py-5 container mb-4 col-sm-6">
+        {currentMovie?<h2>{currentMovie.name} - טריילר</h2>:null}
         {currentMovie? <iframe 
             title="YouTube video player"
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             autoPlay
-            width={windowSize.innerWidth / 2 }
             height={windowSize.innerHeight / 2 } 
             allowFullScreen
             src={currentMovie?.trailer || null}>

@@ -5,11 +5,12 @@
 }
 .spinner-loading{
     position: relative;
-    top: 200px;
+    width: 6rem;
+    height: 6rem;
 }
 .loading-logo{
     position: relative;
-    top: 130px;
+    top: -73px;
     background-color: transparent;
 }
 .loading-logo img{

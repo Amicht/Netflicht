@@ -20,7 +20,7 @@ const SignIn = () => {
 
   return (
     <>
-      {isLoading?<Loading img={loadingImg}/>:
+      {isLoading?<Loading />:
       <div className='sign-in'>
         {users.length >0? <SignInNavbar logo={logo} img={loadingImg}/>:null }
         <h1>מי צופה ב-Netflicht?</h1>

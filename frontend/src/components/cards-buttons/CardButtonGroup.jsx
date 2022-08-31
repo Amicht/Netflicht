@@ -9,7 +9,7 @@ const CardButtonGroup = ({setIsMoreInfo, isMoreInfo, movie, handleClose}) => {
   const { handleWatchList, playMovie } = useContext(StoreCtxt).actions;
 
   return (
-    <div className='row bg-black px-2'>
+    <div className='row bg-black mx-2'>
         <CardButton type="הפעל" 
           key={1}
           action={() => playMovie(movie._id)} 

@@ -1,4 +1,4 @@
-const development = true ;  // *** change to false on production ***
+const development = !true ;  // *** change to false on production ***
 const serverURL = development? 'http://localhost:3001': ""; 
 const JWTKey = 'JWT';
 const USERKEY = "user-data";

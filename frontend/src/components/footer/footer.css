@@ -1,3 +1,6 @@
 footer{
     direction: ltr;
 }
+footer p{
+    direction: ltr;
+}

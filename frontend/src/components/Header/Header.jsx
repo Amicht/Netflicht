@@ -2,17 +2,15 @@ import { useContext, useEffect } from 'react';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import { Link, useNavigate} from 'react-router-dom';
-import {  getLogoImageSrc,  getUserFromStorage } from '../../services/api.service';
+import { Link} from 'react-router-dom';
+import {  getLogoImageSrc } from '../../services/api.service';
 import { StoreCtxt } from '../../services/StoreService';
 import ProfileSettings from '../header-profile-settings/ProfileSettings';
-import Loading from '../Loading/Loading'
 import './Header.css';
 
 
 const Header = ({isHomePage}) => {
-    const navigate = useNavigate();
-    const { user, users, isLoading} = useContext(StoreCtxt).states;
+    const { user, users } = useContext(StoreCtxt).states;
     const {loginUser, getAllUsers, logoutUser } = useContext(StoreCtxt).actions;
     const logo = getLogoImageSrc();
     const navs = [
@@ -22,7 +20,7 @@ const Header = ({isHomePage}) => {
       {path:"/browse/watch-list",title:"הרשימה שלי"}
     ]
 
-    useEffect(() => { getAllUsers(); });
+    useEffect(() => { getAllUsers(); },[]);
   
   return (
     <>

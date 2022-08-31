@@ -17,9 +17,9 @@ const CardButton = ({type, action, isActive}) => {
         }</Tooltip>
      }
    >
-    <div className=' col-2 py-auto' onClick={action}>
+    <div className='col-2 py-auto' onClick={action}>
         <div role="button" className={isActive? 'card-button active':'card-button'}>
-            {type === "הפעל"?<i className="bi bi-play"></i>:null}
+            {type === "הפעל"?<i className="bi bi-play-fill"></i>:null}
             {type === "הוספה לרשימה"?isActive?
             <i className="bi bi-check-lg"></i>:<i className="bi bi-plus-lg"></i>
             :null}
