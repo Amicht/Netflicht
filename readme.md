@@ -5,7 +5,7 @@
 
 ### Description:
 
-An end-to-end Netflix mock web app, using MERN as a development enviroment.
+An end-to-end Netflix-clone web app, using MERN as the development framework.
 
 ### About The Project:
 
@@ -22,7 +22,7 @@ As you can asume, some data was needed for the app functionality and ui, so in o
 #### Sign In:
 Display all 5 existing user profiles, click on on and navigate to om page.
 
-#### Home / Movies / Searis:
+#### Home / Movies / Searies:
 Display all relevant movies and enable to watch and apply all activity by click, such as:
 - Movie year / length.
 - Get more/less info about the movie description.
