@@ -15,8 +15,10 @@ As you can asume, some data was needed for the app functionality and ui, so in o
 
 - The data was generated menually by web-scrapping from number of sites, with small fixes by hand, and you can see it in `./server/generateData/` folder.
 - I used Movie-Trailers from Youtube, instead of uploading real movies to server, so some of the data may not be avaialble.
-- In order to get right into the app, I didnt make the login/register functionality available. instead, the user will automatically get inside the and choose one of five existing profiles, and all activity in that profile will be saved and display accordingly (user 'watch-list').
-- The project was deployed in 'heroku'.
+
+In order to get right into the app, I didnt make the login/register functionality available. instead, the user will automatically get inside the and choose one of five existing profiles, and all activity in that profile will be saved and display accordingly (user 'watch-list').
+
+The project was deployed in 'heroku'.
 
 ### Pages:
 #### Sign In:
