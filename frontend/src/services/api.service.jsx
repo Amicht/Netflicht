@@ -61,7 +61,7 @@ const getUserData = userId => fetch(ENDPOINTS.users + userId).then(jsonify)
         return res.user; 
     })
 const getMovies = () => getData(ENDPOINTS.movies).then(jsonify).then(fixMoviesData);
-const addMovieToWatchList = movieId => postData(ENDPOINTS.watchList + movieId, {data:"fake-data"}).then(jsonify);
+const addMovieToWatchList = movieId => postData(ENDPOINTS.watchList + movieId, {data:movieId}).then(jsonify);
 const removeMovieFromWatchList = movieId => deleteData(ENDPOINTS.watchList + movieId);
 
 
