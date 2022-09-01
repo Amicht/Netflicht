@@ -1,4 +1,4 @@
-## Netflicht - A Netflix Mock MERN App
+## Netflicht
 
 
 ### [Live App](https://netflicht.herokuapp.com/)
