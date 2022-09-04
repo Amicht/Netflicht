@@ -12,7 +12,13 @@
     margin-top: 5px;
     margin-bottom: 5px;
 }
+.header-nav i{
+    color: rgb(177, 176, 176);
+}
 .header-nav:hover{
+    color: rgb(102, 102, 102);
+}
+.header-nav:hover i{
     color: rgb(102, 102, 102);
 }
 .navbar-collapse.collapse.show ~ .display-list{

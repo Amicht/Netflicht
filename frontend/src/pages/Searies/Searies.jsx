@@ -18,7 +18,7 @@ const Searies = () => {
     <>
     <div className='container'>
       <Header isHomePage={false}/>
-      {allSearies[0]?<MainMovie movie={allSearies[8]} />:null}
+      {allSearies[0]?<MainMovie movie={allSearies[5]} />:null}
       <MovieScroller movies={allSearies.filter(m => m.genre === "אנימציה")} title="אנימציה"/>
       <MovieScroller movies={allSearies.filter(m => m.genre === "דרמה")} title="דרמה"/>
       <MovieScroller movies={allSearies.filter(m => m.genre === "פעולה")} title="פעולה"/>

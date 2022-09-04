@@ -9,6 +9,7 @@ import StoreServise from './services/StoreService'
 import DisplayVideo from './pages/display-video/DisplayVideo'
 import ErrorPage from './pages/error/ErrorPage'
 import PageContainer from './components/pageContainer/PageContainer'
+import Search from './pages/serach/Search'
 
 function App() {
 
@@ -22,6 +23,7 @@ function App() {
             <Route path='/browse/searies' element={<PageContainer children={<Searies />}/>}/>
             <Route path='/browse/watch-list' element={<PageContainer children={<MyWatchList />}/>}/>
             <Route path='/browse/watch/:movieId' element={<PageContainer children={<DisplayVideo />}/>}/>
+            <Route path='/browse/search' element={<PageContainer children={<Search />}/>}/>
             <Route path='/*' element={<PageContainer children={<ErrorPage />}/>} />
         </Routes>
       </div>

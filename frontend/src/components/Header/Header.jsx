@@ -17,7 +17,7 @@ const Header = ({isHomePage}) => {
       {path:"/browse",title:"דף הבית"},
       {path:"/browse/movies",title:"סרטים"},
       {path:"/browse/searies",title:"סדרות"},
-      {path:"/browse/watch-list",title:"הרשימה שלי"}
+      {path:"/browse/watch-list",title:"הרשימה שלי"},
     ]
 
     useEffect(() => { getAllUsers(); },[]);
@@ -33,11 +33,16 @@ const Header = ({isHomePage}) => {
         alt="Netflicht Logo"/>
       </Link>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
-      <Navbar.Collapse id="basic-navbar-nav">
-        <Nav className="me-auto">
-          {navs.map((n,i) => <Link key={i} className='header-nav px-3' to={n.path}>{n.title}</Link>)}
-        </Nav>
+      <Navbar.Collapse id="basic-navbar-nav" className='mx-5'>
+          <Nav className="me-auto">
+            <Link className='header-nav px-3' to="/browse/search">חיפוש <i className="bi bi-search"></i></Link>
+          </Nav>
+          {navs.map((n,i) => 
+          <Nav key={i} className="me-auto">
+            <Link className='header-nav px-3' to={n.path}>{n.title}</Link>
+          </Nav>)}
       </Navbar.Collapse>
+
       <Nav className="me-auto display-list">
             <img className="nav-icon" alt={user.name + ' img'} src={user.img}></img>
             <ProfileSettings

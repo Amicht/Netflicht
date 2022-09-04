@@ -26,9 +26,7 @@ const setUserToStorage = user =>  window.sessionStorage.setItem(USERKEY, JSON.st
 const exitAccount = () => {removeTokenFromStorage(); removeUserFromStorage(); }
 
 // helpers
-const fixMoviesData = movies => development? movies.map(m => {return {...m,img:serverURL+ m.img }}): movies;
 const getLogoImageSrc = () => ENDPOINTS.logo;
-
 const getData = (path) => fetch(path, {
     method:METHODS.GET,
     headers: {
@@ -60,7 +58,7 @@ const getUserData = userId => fetch(ENDPOINTS.users + userId).then(jsonify)
         setTokenToStorage(res.token); setUserToStorage(res.user); 
         return res.user; 
     })
-const getMovies = () => getData(ENDPOINTS.movies).then(jsonify).then(fixMoviesData);
+const getMovies = () => getData(ENDPOINTS.movies).then(jsonify);
 const addMovieToWatchList = movieId => postData(ENDPOINTS.watchList + movieId, {data:movieId}).then(jsonify);
 const removeMovieFromWatchList = movieId => deleteData(ENDPOINTS.watchList + movieId);
 

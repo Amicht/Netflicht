@@ -22,8 +22,9 @@ const MovieScroller = ({movies, title}) => {
 
 
   return (
-    <div className="my-1 py-1 scroller text-end">
-    <h5>{title}</h5>
+    <>
+    {movies.length > 0?<div className="my-1 py-1 scroller text-end">
+    <h5 className="text-end mx-5 my-5">{title}</h5>
     <Carousel className="movie-caro my-3">
         {splitMoviesTo4th(movies, windowWidth).map((g,i)=> 
         <Carousel.Item className="caro-slide" interval={30000} key={i}>
@@ -38,7 +39,8 @@ const MovieScroller = ({movies, title}) => {
         </Carousel.Item>)}
       </Carousel>
       <MovieModal show={show} handleClose={handleClose} handleShow={handleShow}/>
-    </div>
+    </div>:null}
+    </>
   )
 }
 
