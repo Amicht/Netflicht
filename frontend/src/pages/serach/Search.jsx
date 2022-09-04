@@ -3,7 +3,7 @@ import { Container } from 'react-bootstrap';
 import Header from '../../components/Header/Header';
 import MovieScroller from '../../components/Movie-Scroller/MovieScroller';
 import { StoreCtxt } from '../../services/StoreService';
-import { searchMovies } from './searchLogic';
+import { searchMovies, setTitle } from './searchLogic';
 import './search.css'
 const Search = () => {
     const { movies } = useContext(StoreCtxt).states;
@@ -11,11 +11,9 @@ const Search = () => {
     const [moviesSelected, setMoviesSelected ] = useState([]);
     const [searchWord, setSerachWord] = useState("");
     const onSearch = (e) => {
-        const newWord = e.target.value
-        console.log(newWord);
-        setSerachWord(newWord)
+        const newWord = e.target.value;
         setSerachWord(newWord);
-        setMoviesSelected(searchMovies(newWord, movies))
+        setMoviesSelected(searchMovies(newWord, movies));
     }
 
   useEffect(() => {
@@ -32,11 +30,10 @@ const Search = () => {
             </div>
         </div>
         <div className='search-results-container'>
-            {moviesSelected.length === 0 && !!searchWord? 
-            <h2>לא נמצאו סרטים עבור: {searchWord}</h2>:
+            <h2>{setTitle(moviesSelected, searchWord)}</h2>
             <MovieScroller 
-            title={!!searchWord? "תוצאות החיפוש עבור: " + searchWord: ""} 
-            movies={moviesSelected} />}
+            title={""} 
+            movies={moviesSelected.length === 0? movies: moviesSelected} />
         </div>
     </Container>
   )

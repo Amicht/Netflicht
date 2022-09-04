@@ -28,21 +28,3 @@ const Footer = () => {
 }
 
 export default Footer
-
-/* 
-const navs = [
-        {path:"/browse",title:"דף הבית"},
-        {path:"/browse/movies",title:"סרטים"},
-        {path:"/browse/searies",title:"סדרות"},
-        {path:"/browse/watch-list",title:"הרשימה שלי"}
-      ]
-<ul className="nav col-md-4 justify-content-end">
-            {navs.map((r,i) => 
-            <li className="nav-item" key={i}>
-                <Link 
-                    to={r.path} 
-                    className="nav-link px-2 text-muted">{r.title}
-                </ Link>
-            </li>)}
-        </ul>
-*/

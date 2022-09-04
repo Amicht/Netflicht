@@ -12,19 +12,33 @@ const StoreServise = ({children}) => {
   const [isLoading, setIsLoading] = useState(false);
   const [loadingImg, setloadingImg] = useState("");
   const [currentMovie, setCurrentMovie] = useState({});
+  const [recommendedMovies, setRecommendedMovies] = useState([]);
+  const [popularMovies, setPopularMovies] = useState([]);
+  const [mainMovie, setMainMovie] = useState({});
   const navigate = useNavigate();
 
-  const getAllUsers = () => users.length === 0? getUsers()
-    .then(res => setUsers(res)): null;
-
+  
+  const getAllUsers = () => users.length === 0? getUsers().then(res => setUsers(res)): null;
+  
+  const get10RandomMovies = movies => {
+    const popularMovies = [];
+    for(let i = 0; i<10; i++){
+        const idx = Math.floor(Math.random() * (movies.length -1));
+        popularMovies.push(movies[idx]);
+    }
+    return popularMovies;
+  }
   const loginUser = async (newUser, isHomePage) => {
     if(!newUser) return navigate('/');
     startLoading(newUser.img);
     await getUserData(newUser._id)
       .then(res => setUser(res))
       .then(() => getMovies())
-      .then(res => setMovies(res))
-      .then(() => {
+      .then(res => {
+        setMovies(res);
+        setPopularMovies(get10RandomMovies(res));
+        setRecommendedMovies(get10RandomMovies(res));
+        setMainMovie(res[Math.floor(Math.random() * (res.length - 1))])
         setTimeout(() => {
           stopLoading();
           if(!isHomePage) navigate('/browse');
@@ -42,7 +56,7 @@ const StoreServise = ({children}) => {
       }
   }
   const getMovie = movieId => setCurrentMovie(movies.find(m => m._id === movieId));
-
+  
   // loading component actions
   const startLoading = (img) => {setloadingImg(img); setIsLoading(true);}
   const stopLoading = () => {setloadingImg(""); setIsLoading(false);}
@@ -86,7 +100,10 @@ const StoreServise = ({children}) => {
     movies,
     isLoading,
     loadingImg,
-    currentMovie
+    currentMovie,
+    recommendedMovies,
+    popularMovies,
+    mainMovie
   }
 
   return (
