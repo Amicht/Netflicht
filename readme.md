@@ -5,7 +5,7 @@
 
 ### Description:
 
-An end-to-end Netflix-clone web app, using MERN as the development framework.
+An end-to-end Netflix-clone web app, using React for the frontend, Node + Express for the backend and mongoDB for the database.
 
 ### About The Project:
 
