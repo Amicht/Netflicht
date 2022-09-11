@@ -1,11 +1,22 @@
 .user-profile-img{
     width: 130px;
-    border-radius: 10%;
-    border: 4px solid black;
-    cursor: pointer;
-    opacity: 0.7;
+    border-radius: 5%;
+    border: 2px solid black;
 }
-.user-profile-img:hover{
+.profile-container img{
+    opacity: 0.9;
+}
+.profile-container span{
+    opacity: 0.5;
+}
+.profile-container:hover span{
     opacity: 1;
-    border: 4px solid white;
+}
+.profile-container:hover{
+    cursor: pointer;
+}
+.profile-container:hover img{
+    border: 2px solid white;
+    cursor: pointer;
+    opacity: 1;
 }

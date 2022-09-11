@@ -7,8 +7,8 @@ const SignInNavbar = ({logo}) => {
         <Navbar.Brand>
         <img
             src={logo}
-            width="180"
-            height="70"
+            width="140"
+            height="60"
             className="d-inline-block align-top"
             alt="Netflicht logo"
         />

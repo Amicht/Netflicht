@@ -5,7 +5,7 @@ const UserProfile = ({name, _id, img, changeUser}) => {
   const onUserClick = () => changeUser({ _id, img },false);
 
   return (
-    <div className='col-sm' onClick={onUserClick}>
+    <div className='col-sm profile-container' onClick={onUserClick}>
         <div >
             <img className='user-profile-img' src={img} alt={name + " Profile image"}/>
         </div>

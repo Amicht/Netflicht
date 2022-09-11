@@ -3,9 +3,14 @@
     height: 13rem;
     background-color: black;
 }
-
+.carousel-control-prev{
+    width: fit-content;
+}
+.carousel-control-next{
+    width: fit-content;
+}
 .movie-card img{
-    opacity: 0.7;
+    opacity: 0.8;
     width: 10rem;
     height: 13rem;
     object-fit: cover;
@@ -23,4 +28,8 @@
 }
 .movie-card:hover img{
     opacity: 1;
+}
+.caro-slide{
+    text-align: center;
+    
 }

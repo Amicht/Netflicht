@@ -27,14 +27,16 @@ const MovieScroller = ({movies, title}) => {
     <h5 className="text-end mx-5 my-5">{title}</h5>
     <Carousel className="movie-caro my-3">
         {splitMoviesTo4th(movies, windowWidth).map((g,i)=> 
-        <Carousel.Item className="caro-slide" interval={30000} key={i}>
+        <Carousel.Item className="caro-slide" interval={300000} key={i}>
           <div className="d-flex">
-            <div className="col-sm "/>
+            <div className="col"></div>
+            <div className="col-sm d-flex">
               {g.map((m,i) => <MovieCard 
                   key={i} 
                   movie={m} 
                   handleCardClick={handleCardClick}/>)}
-            <div className="col"/>
+            </div>
+            <div className="col"></div>
           </div>
         </Carousel.Item>)}
       </Carousel>
