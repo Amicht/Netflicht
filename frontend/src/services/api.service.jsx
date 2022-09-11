@@ -55,7 +55,8 @@ const jsonify = res => res.json();
 const getUsers = () => fetch(ENDPOINTS.users).then(jsonify);
 const getUserData = userId => fetch(ENDPOINTS.users + userId).then(jsonify)
     .then(res => { 
-        setTokenToStorage(res.token); setUserToStorage(res.user); 
+        setTokenToStorage(res.token); 
+        setUserToStorage(res.user); 
         return res.user; 
     })
 const getMovies = () => getData(ENDPOINTS.movies).then(jsonify);

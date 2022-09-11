@@ -14,12 +14,8 @@ server.use('/api/assets/', express.static('assets'));
 
 server.use('/api/users',userCtrl);
 server.use('/api/movies',movieCtrl);
-server.get('*', (req,res) => {
-    res.sendFile(process.cwd()+ "/public/index.html")
-});
+server.get('*', (req,res) => res.status(404).sendFile(process.cwd()+ "/public/index.html"));
 
-server.use('*', (err, req,res,next)=>{
-    res.status(err.status || 500).json(err.message || "ERROR");
-})
+server.use('*', (err, req,res,next) => res.status(err.status || 500).json(err.message || "ERROR"));
 
 server.listen(PORT, () => console.log("Listening to port "+ PORT));

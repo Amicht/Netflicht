@@ -21,12 +21,20 @@ const StoreServise = ({children}) => {
   const getAllUsers = () => users.length === 0? getUsers().then(res => setUsers(res)): null;
   
   const get10RandomMovies = movies => {
-    const popularMovies = [];
-    for(let i = 0; i<10; i++){
-        const idx = Math.floor(Math.random() * (movies.length -1));
-        popularMovies.push(movies[idx]);
+    const randomMovies = [];
+    const valid = {};
+    function getRandomMovie(){
+      const idx = Math.floor(Math.random() * (movies.length -1));
+      if(valid[idx]){ return getRandomMovie() }
+      else{
+        valid[idx] = true;
+        return movies[idx]
+      }
     }
-    return popularMovies;
+    for(let i = 0; i<10; i++){
+      randomMovies.push(getRandomMovie());
+    }
+    return randomMovies;
   }
   const loginUser = async (newUser, isHomePage) => {
     if(!newUser) return navigate('/');

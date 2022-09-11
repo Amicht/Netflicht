@@ -2,8 +2,9 @@ export const splitMoviesTo4th = (array, windowWidth) => {
     let groupNumber = 4;
     if(windowWidth<570) groupNumber = 2;
     else if(windowWidth< 990) groupNumber = 3;
-    else if(windowWidth < 1400) groupNumber = 4;
-    else  groupNumber = 5;
+    else if(windowWidth < 1200) groupNumber = 4;
+    else if(windowWidth < 1400) groupNumber = 6;
+    else  groupNumber = 7;
     let index = 0;
     const splittedArry = [[]];
     array.forEach((m,i) => {

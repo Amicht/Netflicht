@@ -1,12 +1,15 @@
 .movie-card{
-    width: 13rem;
+    width: 10rem;
     height: 13rem;
     background-color: black;
 }
 
 .movie-card img{
-    object-fit: cover;
+    opacity: 0.7;
+    width: 10rem;
     height: 13rem;
+    object-fit: cover;
+    border: solid 2px black;
 }
 .carousel-indicators{ 
     visibility: hidden !important;
@@ -14,8 +17,10 @@
 .card-body{
     display: none;
 }
-.movie-card:hover{
-    position: relative;
-    transform: scale(1.5);
+.movie-card:hover img{
+    border: solid 2px white;
+    cursor: pointer;
 }
-
+.movie-card:hover img{
+    opacity: 1;
+}
